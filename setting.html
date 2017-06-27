@@ -1,0 +1,117 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="css/mui.min.css" rel="stylesheet" />
+	</head>
+	<style>
+		.mui-content2,
+		.mui-content3 {
+			text-align: center;
+		}
+		
+		#difficulty {
+			text-align: center;
+			margin-top: 50%;
+		}
+		
+		#moshi {
+			text-align: center;
+			margin-top: 10%;
+		}
+		
+		#easy,
+		#general,
+		#fast,
+		#normal {
+			margin-left: 5%;
+			margin-right: 5%;
+			margin-top: 10%;
+		}
+		.footer {
+			margin-top: 20%;
+			text-align: center;
+		}
+	</style>
+
+	<body>
+		<div class="mui-content2">
+			<div id="difficulty">
+				游戏难度
+			</div>
+
+			<button id="easy" type="button" class="mui-btn mui-btn-danger mui-btn-outlined">咸鱼一条</button>
+			<button id="general" type="button" class="mui-btn mui-btn-danger">深海杀手</button>
+		</div>
+
+		<div class="mui-content3">
+			<div id="moshi">
+				游戏模式
+			</div>
+
+			<button id="normal" type="button" class="mui-btn mui-btn-primary">休闲模式</button>
+			<button id="fast" type="button" class="mui-btn mui-btn-primary mui-btn-outlined">竞速模式</button>
+		</div>
+		
+		<div class="footer">
+			<button style="background-color: #efeff4;padding: 5px 5px;" class="mui-icon mui-icon-undo"></button>
+		</div>
+
+		<script src="js/mui.min.js"></script>
+		<script src="js/jquery-3.1.1/jquery-3.1.1.min.js"></script>
+		<script type="text/javascript">
+			mui.init()
+			
+			mui(".footer").on('tap', '.mui-icon', function() {
+				mui.back()
+			});
+
+			var btn1 = document.getElementById("easy");
+			var btn2 = document.getElementById("general");
+			var btn3 = document.getElementById("normal");
+			var btn4 = document.getElementById("fast");
+
+			btn1.addEventListener("tap", function() {
+				$('#easy').removeClass('mui-btn-outlined');
+				$('#general').addClass('mui-btn-outlined');
+				localStorage.setItem('difficulty', 2)
+			});
+			btn2.addEventListener("tap", function() {
+				$('#easy').addClass('mui-btn-outlined');
+				$('#general').removeClass('mui-btn-outlined');
+				localStorage.setItem('difficulty', 1);
+			})
+			btn3.addEventListener("tap", function() {
+				$('#normal').removeClass('mui-btn-outlined');
+				$('#fast').addClass('mui-btn-outlined');
+				localStorage.setItem('moshi', 'normal')
+			});
+			btn4.addEventListener("tap", function() {
+				$('#fast').removeClass('mui-btn-outlined');
+				$('#normal').addClass('mui-btn-outlined');
+				localStorage.setItem('moshi', 'fast');
+			})
+
+			if(localStorage.getItem('difficulty')) {
+				var difficulty = localStorage.getItem('difficulty');
+				if(difficulty == 2) {
+					mui.trigger(btn1, 'tap');
+				} else if(difficulty == 1) {
+					mui.trigger(btn2, 'tap');
+				}
+			}
+			if(localStorage.getItem('moshi')) {
+				var moshi = localStorage.getItem('moshi');
+				if(moshi == 'fast') {
+					mui.trigger(btn4, 'tap');
+				} else if(moshi == 'normal') {
+					mui.trigger(btn3, 'tap');
+				}
+			}
+		</script>
+	</body>
+
+</html>

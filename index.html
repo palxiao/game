@@ -1,0 +1,90 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>我是一只鱼</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="css/mui.min.css" rel="stylesheet" />
+		<style>
+			.mui-content {
+				text-align: center;
+			}
+			
+			#start {
+				margin-top: 80%;
+				position: absolute;
+				margin-left: -38px;
+				padding-left: 50px;
+				padding-right: 50px;
+			}
+			
+			#setting {
+				margin-top: 100%;
+				position: relative;
+			}
+			
+			#can {
+				background-color: rgba(173, 237, 247, 0.7);
+				position: absolute;
+			}
+		</style>
+	</head>
+
+	<body>
+		<canvas id="can"></canvas>
+		<div class="mui-content">
+			<button id="start" type="button" class="mui-btn mui-btn-warning mui-btn-outlined">开始游戏</button>
+			<button id="setting" type="button" class="mui-btn mui-btn-primary mui-btn-outlined">游戏设置</button>
+		</div>
+
+		<script src="js/mui.min.js"></script>
+		<script src="common/common.js"></script>
+		<script src="game/index.js"></script>
+		<script src="game/freeModel.js"></script>
+
+		<script type="text/javascript">
+			mui.init()
+
+			mui(".mui-content").on('tap', '#start', function() {
+				mui.openWindow({
+					url: 'main.html',
+					id: 'main'
+				});
+			});
+
+			mui(".mui-content").on('tap', '#setting', function() {
+				mui.openWindow({
+					url: 'setting.html',
+					id: 'setting'
+				});
+			});	
+			
+			var actor = new actor();
+			actor.init();
+			var actor2 = new model();
+			actor2.init();
+
+			var timer = setInterval(function() {
+				for(var i = 0; i < actor.num; i++) {
+					mx[i] = Math.floor(Math.random() * wWidth);
+					my[i] = Math.floor(Math.random() * wHeight);
+				}
+			}, 1500);
+			var timer = setInterval(function() {
+				for(var i = 0; i < actor2.num; i++) {
+					mx2[i] = Math.floor(Math.random() * wWidth);
+					my2[i] = Math.floor(Math.random() * wHeight);
+				}
+			}, 4000);
+
+			function gameLoop() {
+				window.requestAnimationFrame(gameLoop);
+				actor.draw();
+				actor2.draw();
+			}
+			gameLoop();
+		</script>
+	</body>
+
+</html>

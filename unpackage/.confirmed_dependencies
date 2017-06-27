@@ -1,0 +1,62 @@
+{
+	"index.html": {
+		"resources": [
+			"js/mui.min.js",
+			"css/mui.min.css",
+			"js/jquery-3.1.1/jquery-3.1.1.min.js",
+			"common/drawMethod.js",
+			"common/main.js",
+			"common/common.js",
+			"images/background.jpeg",
+			"game/enemy.js",
+			"game/main.js",
+			"images/enemy/blowfish-icon.png",
+			"images/enemy/octo-icon.png",
+			"game/actor.js",
+			"images/starfish-icon.png",
+			"images/starfish-small.png",
+			"images/starfish-middle.png",
+			"game/crash.js",
+			"game/effects.js",
+			"game/data.js",
+			"images/enemy/squid-icon-middle.png",
+			"images/enemy/crab-icon-middle.png",
+			"css/bootstrap.min.css"
+		],
+		"refer": [
+			"main.html"
+		]
+	},
+	"main.html": {
+		"resources": [
+			"images/starfish-middle5.png",
+			"images/starfish-middle1.png",
+			"game/effects.js",
+			"common/loadPic.js",
+			"game/actor.js",
+			"game/crash.js",
+			"game/data.js",
+			"images/enemy/crab-icon-middle.png",
+			"css/bootstrap.min.css",
+			"images/starfish-middle9.png",
+			"game/enemy.js",
+			"images/enemy/octo-icon.png",
+			"js/jquery-3.1.1/jquery-3.1.1.min.js",
+			"images/starfish-middle7.png",
+			"images/starfish-small.png",
+			"images/starfish-middle8.png",
+			"images/enemy/blowfish-icon.png",
+			"images/starfish-middle6.png",
+			"common/common.js",
+			"game/main.js",
+			"images/starfish-middle3.png",
+			"images/enemy/squid-icon-middle.png",
+			"images/starfish-middle0.png",
+			"images/starfish-middle2.png",
+			"images/starfish-middle4.png",
+			"images/background.jpeg",
+			"js/mui.min.js",
+			"css/mui.min.css"
+		]
+	}
+}

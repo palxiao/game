@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>我是一只鱼</title>
+		<link rel="stylesheet" href="css/bootstrap.min.css">
+		<script src="js/mui.min.js"></script>
+		<script src="js/jquery-3.1.1/jquery-3.1.1.min.js"></script>
+		<script src="http://res.wx.qq.com/open/js/jweixin-1.2.0.js"></script>
+		<link href="css/mui.min.css" rel="stylesheet" />
+		<style>
+			#container {
+				top: 0px;
+				margin: 0;
+				padding: 0;
+				position: relative;
+			}
+			
+			#canvas1 {
+				top: 0px;
+				position: absolute;
+				z-index: 0;
+			}
+			
+			#canvas2 {
+				top: 0px;
+				position: absolute;
+				z-index: 0;
+			}
+			
+			.progress {
+				filter: alpha(opacity: 80);
+				opacity: 0.8;
+				-moz-opacity: 0.8;
+				-khtml-opacity: 0.8;
+				height: 25px;
+				background: #262626;
+				padding: 5px;
+				overflow: visible;
+				border-radius: 20px;
+				border-top: 1px solid #000;
+				border-bottom: 1px solid #7992a8;
+				/*margin-top: 50px;*/
+			}
+			
+			.progress .progress-bar {
+				border-radius: 20px;
+				position: relative;
+				animation: animate-positive 2s;
+			}
+			
+			.progress .progress-value {
+				filter: alpha(opacity: 90);
+				opacity: 0.9;
+				-moz-opacity: 0.9;
+				-khtml-opacity: 0.9;
+				display: block;
+				padding: 3px 7px;
+				font-size: 13px;
+				color: #fff;
+				border-radius: 4px;
+				background: #191919;
+				border: 1px solid #000;
+				position: absolute;
+				top: -40px;
+				right: -10px;
+			}
+			
+			.progress .progress-value:after {
+				content: "";
+				border-top: 10px solid #191919;
+				border-left: 10px solid transparent;
+				border-right: 10px solid transparent;
+				position: absolute;
+				bottom: -6px;
+				left: 26%;
+			}
+			
+			.progress-bar.active {
+				animation: reverse progress-bar-stripes 0.40s linear infinite, animate-positive 2s;
+			}
+			
+			@-webkit-keyframes animate-positive {
+				0% {
+					width: 0;
+				}
+			}
+			
+			@keyframes animate-positive {
+				0% {
+					width: 0;
+				}
+			}
+			.mui-content2 {
+				text-align: center;
+			}
+			#loading {
+				    margin-top: 85%;
+    				position: absolute;
+    				width: 80%;
+    				height: 5px;
+    				margin-left: 10%;
+    				border-radius: 0px;
+			}
+			#loadingBar {
+				height: 5px;
+			}
+			#tip {
+				    position: absolute;
+				    top: 40%;
+				    left: 10%;
+				    color: gray;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="mui-content2">
+			<div id="tip"></div>
+			<div id="loading" class="mui-progressbar">
+				<span id="loadingBar"></span>
+			</div>
+		</div>
+		<div id="container" style="display: none;">
+
+			<canvas id="canvas1"></canvas>
+			<canvas id="canvas2"></canvas>
+
+			<div id='data' class="col-md-offset-3 col-md-6">
+				<div class="progress">
+					<div class="progress-bar progress-bar-info progress-bar-striped active" style="">
+						<div class="progress-value" style="display: none;">升级</div>
+					</div>
+				</div>
+			</div>
+
+		</div>
+		<div id="wxShare" style="z-index: 999;position: relative;color: white;text-align: center;display: none;">
+			<div>^</div>
+			点击右上角分享到朋友圈
+		</div>
+	</body>
+	<script src="common/common.js"></script>
+	<script src="game/main.js"></script>
+	<script src="common/loadPic.js"></script>
+	<script src="game/enemy.js"></script>
+	<script src="game/actor.js"></script>
+	<script src="game/crash.js"></script>
+	<script src="game/effects.js"></script>
+	<script src="game/data.js"></script>
+	<script type="text/javascript" charset="utf-8">
+		mui.init();
+	</script>
+
+</html>
