@@ -17,6 +17,8 @@ can.addEventListener("touchstart", function(e) {
 		mx[i] = mx2[i] = e.touches[0].pageX;
 		my[i] = my2[i] = e.touches[0].pageY;
 	}
+	//进行了点击
+	document.getElementById('tip').style.display="none";
 
 });
 can.addEventListener("touchmove", function(e) {

@@ -30,6 +30,41 @@
 				background-size: 100% 100%;
 				position: absolute;
 			}
+
+			.dot {
+				position: absolute;
+				top: 36%;
+    			left: 65%;
+				/*background-color:#E3E3E3;
+				border-radius: 50%;
+				box-shadow: 0 0 10px rgba(0,0,0,.3) inset;*/
+				-webkit-animation-name:'ripple';/*动画属性名，也就是我们前面keyframes定义的动画名*/
+				-webkit-animation-duration: 1s;/*动画持续时间*/
+				-webkit-animation-timing-function: ease; /*动画频率，和transition-timing-function是一样的*/
+				-webkit-animation-delay: 0s;/*动画延迟时间*/
+				-webkit-animation-iteration-count: infinite;/*定义循环资料，infinite为无限次*/
+				-webkit-animation-direction: alternate;/*定义动画方式*/
+				}
+				 
+			@keyframes ripple {
+				0% {
+				opacity:0.35;
+				width:30px;
+				height:30px;
+				}
+				100% {
+				opacity: 0.65;
+				width:80px;
+				height:80px;
+				}
+			}
+			.dotTip {
+				position: absolute;
+				top: 35%;
+    			left: 65%;
+    			opacity: 0.5;
+    			color: #ffffff;
+			}
 		</style>
 	</head>
 
@@ -39,6 +74,13 @@
 			<button id="start" type="button" style="color: #98713a" class="mui-btn mui-btn-warning mui-btn-outlined">开始游戏</button>
 			<button id="setting" type="button" class="mui-btn mui-btn-primary mui-btn-outlined">游戏设置</button>
 		</div>
+		<div id="tip">
+			<div class="dotTip">点击任意处</div>
+			<div class="dot">
+				<img width="100%" height="100%" src="images/finger3.png">
+			</div>
+		</div>
+		
 
 		<script src="js/mui.min.js"></script>
 		<script src="common/common.js"></script>
